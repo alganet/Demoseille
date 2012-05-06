@@ -12,10 +12,31 @@ Requirements
 * PHP >= 5.3.5
 * Respect (PHP Components)
     * Loader >= 0.2.0
-    * Rest >= 0.4.4
+    * Rest >= 0.4.1
     * Config >= 0.4.1
     * Relational >=  0.4.4
     * Validation >=  0.4.4
+* Twig >= 1.7.0
+
+Installation
+------------
+
+Point the web server to use the `public` folder as the Document Root. All requests
+**must** be redirected to the `index.php` file. If Apache is used, a `.htaccess`
+is already provided.
+
+Below are the pear installation commands for the before mentioned dependencies:
+
+```
+sudo pear channel-discover respect.li/pear
+sudo pear install Respect/Loader-0.2.0
+sudo pear install Respect/Rest-0.4.1
+sudo pear install Respect/Relational-0.4.4
+sudo pear install Respect/Config-0.4.1
+sudo pear install Respect/Validation-0.4.4
+sudo pear channel-discover pear.twig-project.org
+sudo pear install twig/Twig
+```
 
 API endpoints
 -------------

@@ -4,6 +4,6 @@ ini_set('display_errors',1);
 error_reporting(-1);
 
 chdir(__DIR__.'/../');
-set_include_path('library'.PATH_SEPARATOR.get_include_path());
+set_include_path('src'.PATH_SEPARATOR.get_include_path());
 
 spl_autoload_register(require 'Respect/Loader.php');
