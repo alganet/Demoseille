@@ -1,6 +1,6 @@
 global:
-  env:
-    - APP_NAME: demoseille
+  env::
+    - APP_NAME: Demoseille
 
 web1:
   name: demoseille
