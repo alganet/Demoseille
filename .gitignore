@@ -1,2 +1,10 @@
 .foundation
 conf/accesstokens.ini
+vendor/EHER
+vendor/Respect
+vendor/autoload.php
+vendor/bin
+vendor/composer
+vendor/symfony
+vendor/twig
+composer.phar

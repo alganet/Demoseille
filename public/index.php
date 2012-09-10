@@ -1,14 +1,18 @@
 <?php
-require 'bootstrap.php';
-
 try {
+    require 'bootstrap.php';
     $config = new Respect\Config\Container('conf/app.ini');
-    function twig_render($vars) {
-        global $config;
-        $twig = $config->container->twig;
-        return call_user_func_array(array($twig, 'render'), $vars);
-    };
-    echo $config->container->router->run();
+    $router = $config->container->router;
+    $router->get('/',               'Demoseille\Controllers\Index');
+    $router->get('/venues',         'Demoseille\Controllers\Venues');
+    $router->post('/venues',        'Demoseille\Controllers\Venues');
+    $router->get('/accesstokens/*', 'Demoseille\Controllers\AccessTokens');
+
+    $router->always('Accept', array(
+        'text/html' => 'twig_render',
+        'application/json' => 'json_encode'
+    ));
+    echo $router->run();
 } catch (Exception $e) {
-    var_dump($e);
+    echo PHP_EOL, '<pre>', '<hr/>', $e, PHP_EOL, $e->getTraceAsString(), '</pre>';
 }

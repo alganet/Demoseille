@@ -1,0 +1,47 @@
+{
+    "hash": "0ecef5eae808414ad0fac9990f85011d",
+    "packages": [
+        {
+            "package": "EHER/PHPUnit",
+            "version": "1.6"
+        },
+        {
+            "package": "Respect/Config",
+            "version": "0.3.1"
+        },
+        {
+            "package": "Respect/Data",
+            "version": "dev-master",
+            "source-reference": "e72f7085f132282ed93c845689956d0ad1377f72",
+            "commit-date": "1330974296"
+        },
+        {
+            "package": "Respect/Relational",
+            "version": "0.4.4"
+        },
+        {
+            "package": "Respect/Rest",
+            "version": "0.4.8"
+        },
+        {
+            "package": "Respect/Validation",
+            "version": "0.4.4"
+        },
+        {
+            "package": "symfony/finder",
+            "version": "v2.1.0"
+        },
+        {
+            "package": "twig/twig",
+            "version": "v1.9.2"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "respect/data": 20
+    }
+}

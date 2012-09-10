@@ -1,0 +1,14 @@
+{
+    "require": {
+        "Respect/Rest": "0.4.*",
+        "Respect/Config": "0.3.*",
+        "Respect/Validation": "0.4.*",
+        "Respect/Data": "dev-master",
+        "Respect/Relational": "0.4.*",
+        "twig/twig": "1.9.*",
+        "EHER/PHPUnit": "1.6"
+    },
+    "autoload": {
+        "psr-0": {"Demoseille": "src/"}
+    }
+}

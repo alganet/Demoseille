@@ -1,6 +1,5 @@
 <?php
-
-namespace Aeronautics\Controllers;
+namespace Demoseille\Controllers;
 
 use \InvalidArgumentException;
 use \UnexpectedValueException;

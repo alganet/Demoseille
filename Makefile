@@ -6,6 +6,18 @@ GENERATE_TOOL = php .foundation/repo/bin/project-generate.php
 default:
 	@echo "Foundation. See 'make help' for instructions."
 
+clean:
+	@echo "Cleaning everything"
+	-rm -rf vendor
+	-rm -f composer.lock
+
+install:
+	@echo "Installing Composer (http://getcomposer.org)"
+	curl -s https://getcomposer.org/installer | php
+	@echo "Installing dependencies"
+	composer.phar install
+	@echo "Don't forget to configure your HTTP server"
+
 help:
 	@echo "\nFoundation Help\n"
 	@echo "            help: Shows this message"
@@ -35,7 +47,7 @@ help:
 
 # Foundation puts its files into .foundation inside your project folder.
 # You can delete .foundation anytime and then run make foundation again if you need
-foundation:
+foundation-do-not-use-please:
 	@echo "Updating Makefile"
 	curl -LO git.io/Makefile
 	@echo "Creating .foundation folder"
@@ -103,10 +115,6 @@ coverage:
 	@cd `$(CONFIG_TOOL) test-folder`;phpunit  --coverage-html=reports/coverage --coverage-text .
 	@echo "Done. Reports also available on `$(CONFIG_TOOL) test-folder`/reports/coverage/index.html"
 
-# Any cleaning mechanism should be here
-clean:
-	@rm -Rf `$(CONFIG_TOOL) test-folder`/reports
-
 # Targets below use the same rationale. They change the package.ini file, so you'll need a
 # package-sync after them
 patch:  
@@ -133,13 +141,6 @@ tag:
 # Runs on the current package.xml file
 pear:
 	@pear package
-
-# On root PEAR installarions, this need to run as sudo
-install:
-	@echo "You may need to run this as sudo."
-	@echo "Discovering channel"
-	-@pear channel-discover `$(CONFIG_TOOL) pear-channel`
-	@pear install package.xml
 
 # Install pirum, clones the PEAR Repository, make changes there and push them.
 pear-push:
